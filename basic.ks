@@ -53,10 +53,12 @@ echo "ansible	ALL=(ALL)	NOPASSWD:ALL" >> /etc/sudoers
 # crea un usuario con acceso root para correr ansible
 %post
 mkdir -p /ansible/.ssh
-cat << EOFKEY > /ansible/.ssh/authorized_keys
+
 # poner las keys que correspondan
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmmt+Tai658C2CMyRcMDJykiUBmxnyNYvkKAGaW+VmPw9STIW0q7yJeK5NaeHMhCWuUS9NrLzE9DpUhIMSSK5xf3SjUNVcCzVS0cP1bPXl9dEvR29Igfyj2K9tpsEx/R3GSfmYS+vKWE8qLvjKWzcPo9n8NNfc9CEnxJv1dCpiHz52dNllFYyp58DRz+JM7Wf0SL0jFmH55WC7BhTlRrulEQYj0b5m1OJSlQyywk3UMmKe5jagutCy5Kxix/XGJOGmuTeuPku2ZOI5+JxjKpx+m7UE/IAKZF6ovqVvc++XwsEvCCD+2pPDYeRgycg/MUaKpIH7+u/wP5QOmQNiz/bq5UkH1uMTXreFZx+ZpEu9HynruQE9QEFTTlP93nlPPkmxNcFFh2HMEL85VuL9QTGTBNpMBHSfsXyCvJZDCC/yp0MoLxKMRzGsUS2Bt3mcyNsZdtqZ2JxXUzG6YUySMoEfTJ9xJhIpcyTtiDgboz8gmvaxTIyQnQNrwyahR1FKnUEg6RB0UuMfJOEDQa0sec4Sh9LXZYFM325rwNQXb9KaARt6dQ+kd77cVT2hfhY+bRq4BnpRt1UDUILw/QMSRHJLf8xJ7vEFzaNqqKku26VQX8SUeYT8n0+kh/k5/N45tSjzkH+2V2Y+L9aJgz7RIhrLlgLMwgwKhKPPUHg+vAriBw== lara@polko
+cat << EOFKEY > /ansible/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKAwHDSJwv/uzyVCZrcl53mErLj5HiXPPeC48jKr1DqFmi6s4LEubfu1UHjGiu/fxC5crthNEMBq8PoIL3KMthFZcwV1PWJjPzBGOfWNFkmLukKGJQytisunJ9QFMp6qHme+sbAKZaC99RedgHQF0fF6zFdJUhm+sYoHU+jF8VUtmsruo32ep6RKDKh7EjIrfWsXmrd9klCcAY9qscECuQiHFUUXHO+0n/LcaKEo/wly6otgqHvGshUmfgVpBucZ+/pWyLFyqC/BgT3SiKdS4k9oe1aTPOrgEMmRCf2eb7giQHXiCiqeLbiYdClUaGQwrfg9VSbNkuLsFzw3tfS7C7 Generated-by-Nova
 EOFKEY
+
 chown -R ansible:ansible /ansible/.ssh
 chmod -R go-rwx /ansible/.ssh
 %end
