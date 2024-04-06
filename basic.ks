@@ -10,6 +10,9 @@ lang en_US.UTF-8
 # System timezone
 timezone Asia/Shanghai
 
+# Root password
+rootpw shanghaitomamate
+
 # Network information
 network --bootproto=dhcp --device=link --noipv6 --activate --onboot=yes
 network  --hostname=nodocba.localhost
